@@ -2,11 +2,8 @@ import axios from "axios";
 
 export const fetchPatientData = async () => {
   try {
-    // const username = process.env.REACT_APP_API_USERNAME;
-    // const password = process.env.REACT_APP_API_PASSWORD;
-
-    const username = "coalition";
-    const password = "skills-test";
+    const username = import.meta.env.VITE_API_USERNAME;
+    const password = import.meta.env.VITE_API_PASSWORD;
 
     if (!username || !password) {
       throw new Error("API credentials are missing.");
