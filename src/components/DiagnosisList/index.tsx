@@ -12,7 +12,6 @@ const DiagnosisList = () => {
       try {
         const response = await getJessicaData();
         setData(response[0]);
-        console.log(response);
       } catch (error: any) {
         console.error("Error fetching Jessica's data:", error.message || error);
       } finally {
@@ -53,8 +52,8 @@ const DiagnosisList = () => {
           </tr>
         </thead>
         <tbody>
-          {data.diagnostic_list.map((diagnosis) => (
-            <tr className="my-[7px]">
+          {data.diagnostic_list.map((diagnosis, index) => (
+            <tr key={index} className="my-[7px]">
               <td className="text-14 leading-19 py-[19px] pr-16">
                 {diagnosis.name}
               </td>

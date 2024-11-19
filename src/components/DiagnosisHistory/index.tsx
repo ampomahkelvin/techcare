@@ -15,7 +15,6 @@ const DiagnosisHistory = () => {
       try {
         const response = await getJessicaData();
         setData(response[0]);
-        console.log(response);
       } catch (error: any) {
         console.error("Error fetching Jessica's data:", error.message || error);
       } finally {

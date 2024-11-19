@@ -13,7 +13,6 @@ const LabResults = () => {
       try {
         const response = await getJessicaData();
         setData(response[0]);
-        console.log(response);
       } catch (error: any) {
         console.error("Error fetching Jessica's data:", error.message || error);
       } finally {
@@ -40,8 +39,8 @@ const LabResults = () => {
     <section className="w-[367px] h-[296px] p-[20px] overflow-y-scroll">
       <h1 className="text-24 leading-33 font-bold mb-[16px]">Lab Results</h1>
       <div>
-        {data.lab_results.map((result) => (
-          <div className="flex justify-between text-[13px] leading-[18px] items-center py-[11px] my-[5px]">
+        {data.lab_results.map((result, index) => (
+          <div key={index} className="flex justify-between text-[13px] leading-[18px] items-center py-[11px] my-[5px]">
             {result}
             <img src={Icons.download} alt="Download Icon" />
           </div>

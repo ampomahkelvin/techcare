@@ -19,7 +19,6 @@ const PatientsList = () => {
       try {
         const response = await fetchPatientData();
         setPatientsData(response);
-        console.log(response);
       } catch (error) {
         console.log(error);
       } finally {
